@@ -32,6 +32,11 @@
       "String": "N\u00E3o h\u00E1 muita coisa aqui... ainda.",
       "IsGenerated": false,
       "Guid": "252a471d-d58f-4f08-8742-6f7bc95001a9"
+    },
+    {
+      "String": "Mundo",
+      "IsGenerated": false,
+      "Guid": "cf1393ad-96db-43fc-b7c3-280c70974d8e"
     }
   ],
   "dialogueResources": [

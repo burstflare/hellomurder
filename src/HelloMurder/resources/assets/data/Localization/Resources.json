@@ -32,6 +32,11 @@
       "String": "There\u0027s nothing much here... yet.",
       "IsGenerated": false,
       "Guid": "252a471d-d58f-4f08-8742-6f7bc95001a9"
+    },
+    {
+      "String": "World",
+      "IsGenerated": false,
+      "Guid": "cf1393ad-96db-43fc-b7c3-280c70974d8e"
     }
   ],
   "dialogueResources": [

@@ -13,7 +13,9 @@ namespace HelloMurder
                 using Game game = new(new HelloMurderGame());
                 game.Run();
             }
-            catch (Exception ex) when (GameLogger.CaptureCrash(ex)) { }
+            catch (Exception) {
+                GameLogger.CaptureCrash();
+            }
         }
     }
 }

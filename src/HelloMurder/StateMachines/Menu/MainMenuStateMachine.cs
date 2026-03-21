@@ -94,15 +94,17 @@ namespace HelloMurder.StateMachines
                     switch (_menuInfo.Selection)
                     {
                         case 0: // Tweak sound
-                            float volume = Game.Preferences.ToggleSoundVolumeAndSave();
+                            // TODO: Reimplement using older copy of Murder
+                            // float volume = Game.Preferences.ToggleSoundVolumeAndSave();
 
-                            _menuInfo.Options[0] = volume == 1 ? new(LocalizedResources.Menu_SoundsOn) : new(LocalizedResources.Menu_SoundsOff);
+                            // _menuInfo.Options[0] = volume == 1 ? new(LocalizedResources.Menu_SoundsOn) : new(LocalizedResources.Menu_SoundsOff);
                             break;
 
                         case 1: // Tweak music
-                            float sound = Game.Preferences.ToggleMusicVolumeAndSave();
+                            // TODO: Reimplement using older copy of Murder
+                            // float sound = Game.Preferences.ToggleMusicVolumeAndSave();
 
-                            _menuInfo.Options[1] = sound == 1 ? new(LocalizedResources.Menu_MusicOn) : new(LocalizedResources.Menu_MusicOff);
+                            // _menuInfo.Options[1] = sound == 1 ? new(LocalizedResources.Menu_MusicOn) : new(LocalizedResources.Menu_MusicOff);
                             break;
 
                         case 2: // Language
@@ -128,7 +130,8 @@ namespace HelloMurder.StateMachines
 
         private void SwitchLanguage()
         {
-            Game.Data.ChangeLanguage(Languages.Next(Game.Preferences.Language));
+            // TODO: Reimplement using older copy of Murder
+            // Game.Data.ChangeLanguage(Languages.Next(Game.Preferences.Language));
         }
 
         private void DrawMainMenu(RenderContext render)
