@@ -17,7 +17,7 @@
   "IsVSyncEnabled": false,
   "PushAwayInterval": 0.05,
   "DefaultGridCellSize": 24,
-  "StartingScene": "3bd26720-c3b1-44c1-b7c3-192d5656cc37",
+  "StartingScene": "e09343c5-19b5-419d-88f4-f06ed35a4752",
   "PreloadTextures": true,
   "Theme": {
     "Bg": {

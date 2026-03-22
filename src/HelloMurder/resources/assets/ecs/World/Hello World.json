@@ -672,6 +672,18 @@
           ]
         }
       }
+    },
+    "fe9a8bd7-b6a1-4543-98c8-447156e802f5": {
+      "IsDeactivated": false,
+      "ActivateWithParent": false,
+      "guid": "fe9a8bd7-b6a1-4543-98c8-447156e802f5",
+      "name": "Pathfind Grid Entity",
+      "components": {
+        "Murder.Components.PathfindGridComponent, Murder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": {
+          "$type": "Murder.Components.PathfindGridComponent",
+          "Cells": []
+        }
+      }
     }
   },
   "entitiesToFolder": {

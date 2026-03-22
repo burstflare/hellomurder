@@ -4,6 +4,8 @@
     "Id": "cf1393ad-96db-43fc-b7c3-280c70974d8e"
   },
   "Order": 1,
+  "ReferencedAtlas": [],
+  "Flags": 0,
   "Name": "Menu",
   "Guid": "e09343c5-19b5-419d-88f4-f06ed35a4752",
   "systems": [],
@@ -13,6 +15,7 @@
       "Item2": true
     }
   ],
+  "systemsToRemove": [],
   "folders": {},
   "filterFolders": {},
   "entities": {
@@ -28,6 +31,18 @@
             "newGameWorld": "3bd26720-c3b1-44c1-b7c3-192d5656cc37",
             "cachedPersistedState": "Main"
           }
+        }
+      }
+    },
+    "9d4c98cf-80ca-43cc-94f1-288cf0f481a5": {
+      "IsDeactivated": false,
+      "ActivateWithParent": false,
+      "guid": "9d4c98cf-80ca-43cc-94f1-288cf0f481a5",
+      "name": "Pathfind Grid Entity",
+      "components": {
+        "Murder.Components.PathfindGridComponent, Murder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": {
+          "$type": "Murder.Components.PathfindGridComponent",
+          "Cells": []
         }
       }
     }
