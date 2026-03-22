@@ -2,9 +2,9 @@
 using Bang.Entities;
 using Bang.StateMachines;
 using HelloMurder.Core;
+using HelloMurder.Services;
 using Murder;
 using Murder.Assets;
-using Murder.Assets.Localization;
 using Murder.Attributes;
 using Murder.Core.Geometry;
 using Murder.Core.Graphics;
@@ -94,17 +94,15 @@ namespace HelloMurder.StateMachines
                     switch (_menuInfo.Selection)
                     {
                         case 0: // Tweak sound
-                            // TODO: Reimplement using older copy of Murder
-                            // float volume = Game.Preferences.ToggleSoundVolumeAndSave();
+                            float volume = Game.Preferences.SetSoundVolume(Game.Preferences.SoundVolume == 1 ? 0 : 1);
 
-                            // _menuInfo.Options[0] = volume == 1 ? new(LocalizedResources.Menu_SoundsOn) : new(LocalizedResources.Menu_SoundsOff);
+                            _menuInfo.Options[0] = volume == 1 ? new(LocalizedResources.Menu_SoundsOn) : new(LocalizedResources.Menu_SoundsOff);
                             break;
 
                         case 1: // Tweak music
-                            // TODO: Reimplement using older copy of Murder
-                            // float sound = Game.Preferences.ToggleMusicVolumeAndSave();
+                            float sound = Game.Preferences.SetMusicVolume(Game.Preferences.MusicVolume == 1 ? 0 : 1);
 
-                            // _menuInfo.Options[1] = sound == 1 ? new(LocalizedResources.Menu_MusicOn) : new(LocalizedResources.Menu_MusicOff);
+                            _menuInfo.Options[1] = sound == 1 ? new(LocalizedResources.Menu_MusicOn) : new(LocalizedResources.Menu_MusicOff);
                             break;
 
                         case 2: // Language
@@ -130,8 +128,7 @@ namespace HelloMurder.StateMachines
 
         private void SwitchLanguage()
         {
-            // TODO: Reimplement using older copy of Murder
-            // Game.Data.ChangeLanguage(Languages.Next(Game.Preferences.Language));
+            LanguageDataServices.ChangeToNextLanguage(Game.Preferences.Language, Game.Data, Game.Profile);
         }
 
         private void DrawMainMenu(RenderContext render)

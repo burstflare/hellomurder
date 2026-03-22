@@ -6,6 +6,7 @@ using HelloMurder.Components;
 using HelloMurder.Core;
 using Murder;
 using Murder.Core.Graphics;
+using Murder.Diagnostics;
 using Murder.Services;
 using Murder.Utilities;
 using System.Collections.Immutable;
@@ -29,7 +30,10 @@ namespace HelloMurder.Systems
             {
                 return;
             }
-
+            if (!context.Entity.HasDialogueUi()) {
+                GameLogger.Log($"{context.Entity.EntityId} has no dialogue UI");
+                return;
+            }
             DialogueUiComponent dialogue = context.Entity.GetDialogueUi();
             if (_currentIndex >= dialogue.Content.Length)
             {

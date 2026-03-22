@@ -3,9 +3,12 @@ using HelloMurder.Core.Input;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Murder;
+using Murder.Assets;
+using Murder.Assets.Localization;
 using Murder.Core.Geometry;
 using Murder.Core.Graphics;
 using Murder.Core.Input;
+using Murder.Data;
 using Murder.Serialization;
 using System.Text.Json;
 
@@ -61,6 +64,26 @@ public class HelloMurderGame : IMurderGame
         Game.Input.RegisterButton(MurderInputButtons.Cancel, Buttons.B);
         Game.Input.RegisterButton(MurderInputButtons.Cancel, Buttons.Back);
         Game.Input.RegisterButton(MurderInputButtons.Cancel, Buttons.Start);
+    }
+
+    public LanguageId GetNextLanguageId()
+    {
+        List<string> localizationAssets = [..
+                Game.Data.GetAllAssets()
+                .Where(asset => asset is LocalizationAsset)
+                .Select(a => a.Guid.ToString())
+        ];
+
+        List<LanguageId> languageIds = [..
+                 Game.Profile.LocalizationResources.Keys
+                .Where(k => localizationAssets.Contains(Game.Profile.LocalizationResources[k].ToString()))
+        ];
+
+        var nextLanguageId = languageIds[
+            (languageIds.IndexOf(Game.Preferences.Language) + 1)
+            % languageIds.Count
+        ];
+        return nextLanguageId;
     }
 
 }
